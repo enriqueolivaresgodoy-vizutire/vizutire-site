@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VIZUtire | Control de riesgo real en neumáticos OTR</title>
+  <meta name="description" content="VIZUtire entrega análisis estructural de neumáticos OTR mediante ultrasonidos, modelamiento tensional y analítica avanzada para reducir riesgo, consumo y detenciones no programadas." />
+
+  <!-- Tailwind CSS via CDN (costo cero) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Paleta VIZUtire (OBLIGATORIA) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vizuRed:   "#E10600",
+            graphite:  "#111111",
+            techGray:  "#9E9E9E",
+            lightGray: "#E6E6E6",
+            whiteTech:"#FFFFFF"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .vizu-accent { color: #E10600; } /* rojo quirúrgico */
+  </style>
+</head>
+
+<body class="bg-whiteTech text-graphite antialiased">
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-50 bg-whiteTech/95 backdrop-blur border-b border-lightGray">
+    <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="#top" class="flex items-baseline gap-1 font-semibold tracking-tight">
+        <span class="text-graphite text-lg">VIZU</span><span class="text-vizuRed text-lg">tire</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-7 text-sm text-graphite">
+        <a href="#problema" class="hover:text-vizuRed transition">Problema</a>
+        <a href="#solucion" class="hover:text-vizuRed transition">Solución</a>
+        <a href="#como" class="hover:text-vizuRed transition">Cómo funciona</a>
+        <a href="#historia" class="hover:text-vizuRed transition">Historia</a>
+        <a href="#evidencia" class="hover:text-vizuRed transition">Evidencia</a>
+        <a href="#galeria" class="hover:text-vizuRed transition">Galería</a>
+        <a href="#conocimiento" class="hover:text-vizuRed transition">Conocimiento</a>
+        <a href="#contacto" class="inline-flex items-center gap-2 px-4 py-2 border border-graphite rounded-xl hover:border-vizuRed hover:text-vizuRed transition">
+          Contacto
+          <span aria-hidden="true">→</span>
+        </a>
+      </nav>
+
+      <!-- Mobile menu button (JS mínimo) -->
+      <button id="menuBtn"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-lightGray hover:border-techGray transition"
+        aria-label="Abrir menú" aria-expanded="false">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile nav panel -->
+    <div id="mobileNav" class="md:hidden hidden border-t border-lightGray bg-whiteTech">
+      <div class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-4 text-sm">
+        <a href="#problema" class="hover:text-vizuRed">Problema</a>
+        <a href="#solucion" class="hover:text-vizuRed">Solución</a>
+        <a href="#como" class="hover:text-vizuRed">Cómo funciona</a>
+        <a href="#historia" class="hover:text-vizuRed">Historia</a>
+        <a href="#evidencia" class="hover:text-vizuRed">Evidencia</a>
+        <a href="#galeria" class="hover:text-vizuRed">Galería</a>
+        <a href="#conocimiento" class="hover:text-vizuRed">Conocimiento</a>
+        <a href="#contacto" class="inline-flex items-center justify-center gap-2 px-4 py-2 border border-graphite rounded-xl hover:border-vizuRed hover:text-vizuRed transition">
+          Contacto
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="border-b border-lightGray">
+      <div class="max-w-6xl mx-auto px-5 py-14 md:py-20 grid md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-7">
+          <p class="text-xs uppercase tracking-widest text-techGray">Análisis estructural de neumáticos OTR • Minería</p>
+
+          <h1 class="mt-4 text-3xl md:text-5xl font-semibold leading-tight tracking-tight">
+            Control de riesgo real en neumáticos OTR con
+            <span class="vizu-accent">VIZU</span><span class="text-graphite">tire</span>.
+          </h1>
+
+          <p class="mt-5 text-base md:text-lg text-graphite/85 leading-relaxed">
+            Ultrasonidos + modelamiento tensional + analítica avanzada para detectar daños internos no visibles,
+            priorizar intervención y tomar decisiones por condición.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#contacto"
+               class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-graphite text-whiteTech hover:bg-vizuRed transition">
+              Solicitar contacto técnico
+            </a>
+            <a href="#evidencia"
+               class="inline-flex items-center justify-center px-5 py-3 rounded-2xl border border-graphite text-graphite hover:border-vizuRed hover:text-vizuRed transition">
+              Ver evidencia y KPIs
+            </a>
+          </div>
+
+          <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="p-4 rounded-2xl border border-lightGray">
+              <p class="text-xs text-techGray uppercase tracking-widest">Enfoque</p>
+              <p class="mt-1 text-sm font-medium">Predictivo por condición</p>
+            </div>
+            <div class="p-4 rounded-2xl border border-lightGray">
+              <p class="text-xs text-techGray uppercase tracking-widest">Compatibilidad</p>
+              <p class="mt-1 text-sm font-medium">Complemento a TPMS</p>
+            </div>
+            <div class="p-4 rounded-2xl border border-lightGray">
+              <p class="text-xs text-techGray uppercase tracking-widest">Madurez</p>
+              <p class="mt-1 text-sm font-medium">TRL 9 en entorno real</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-5">
+          <div class="rounded-2xl border border-lightGray overflow-hidden bg-whiteTech">
+            <div class="px-6 py-4 border-b border-lightGray">
+              <p class="text-sm font-semibold">Modelo de gestión integrado</p>
+              <p class="text-xs text-techGray mt-1">Energía + cargas dinámicas + estructura</p>
+            </div>
+            <img src="assets/modelo-gestion-integrado-vizutire.png"
+                 alt="Modelo de gestión integrado VIZUtire"
+                 class="w-full h-auto" loading="lazy" />
+          </div>
+
+          <div class="mt-6 p-6 rounded-2xl border border-lightGray bg-whiteTech">
+            <p class="text-sm font-semibold">Qué hacemos (sin promesas, con método)</p>
+            <ul class="mt-4 space-y-3 text-sm text-graphite/85">
+              <li class="flex gap-3">
+                <span class="w-2 h-2 mt-2 rounded-full bg-vizuRed"></span>
+                Detectamos discontinuidades internas mediante ultrasonidos.
+              </li>
+              <li class="flex gap-3">
+                <span class="w-2 h-2 mt-2 rounded-full bg-vizuRed"></span>
+                Modelamos esfuerzos operacionales para priorizar riesgo y acción.
+              </li>
+              <li class="flex gap-3">
+                <span class="w-2 h-2 mt-2 rounded-full bg-vizuRed"></span>
+                Entregamos recomendaciones prácticas: operar, reparar, rotar o baja técnica.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section id="problema" class="border-b border-lightGray">
+      <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
+        <div class="max-w-3xl">
+          <p class="text-xs uppercase tracking-widest text-techGray">El problema</p>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Daños no visibles y decisiones con incertidumbre.</h2>
+          <p class="mt-4 text-graphite/85 leading-relaxed">
+            La falla estructural interna puede incubarse sin evidencia externa clara. Si el control se limita a inspección visual
+            o criterios rígidos, el riesgo es doble: operar con daño crítico o dar de baja prematuramente un activo recuperable.
+          </p>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-5">
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-sm font-semibold">Riesgo operacional</p>
+            <p class="mt-2 text-sm text-graphite/85">Eventos de alta energía y exposición de personas/equipos.</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-sm font-semibold">Costo y consumo</p>
+            <p class="mt-2 text-sm text-graphite/85">Baja anticipada y compras prematuras.</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-sm font-semibold">Productividad</p>
+            <p class="mt-2 text-sm text-graphite/85">Detenciones no programadas e indisponibilidad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUCIÓN -->
+    <section id="solucion" class="border-b border-lightGray">
+      <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
+        <div class="max-w-3xl">
+          <p class="text-xs uppercase tracking-widest text-techGray">La solución</p>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">
+            Ultrasonidos + análisis tensional para decidir por condición.
+          </h2>
+          <p class="mt-4 text-graphite/85 leading-relaxed">
+            Combinamos inspección ultrasónica no destructiva con modelamiento de tensiones y analítica para entregar
+            criterios técnicos trazables sobre operación, reparación, rotación o baja técnica.
+          </p>
+        </div>
+
+        <div class="mt-10 grid lg:grid-cols-2 gap-6 items-start">
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-sm font-semibold">Inspección ultrasónica</p>
+            <p class="mt-2 text-sm text-graphite/85">Identificación y evaluación de discontinuidades internas.</p>
+            <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
+              <img src="assets/ultrasonido-inspeccion.png" alt="Ultrasonido inspección" class="w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-sm font-semibold">Modelamiento tensional</p>
+            <p class="mt-2 text-sm text-graphite/85">Relación entre operación y respuesta estructural del neumático.</p>
+            <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
+              <img src="assets/modelamiento-fisico-tensional.png" alt="Modelamiento físico tensional" class="w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 p-6 rounded-2xl bg-graphite text-whiteTech">
+          <p class="text-xs uppercase tracking-widest text-techGray">Principio rector</p>
+          <p class="mt-2 text-base md:text-lg leading-relaxed">
+            VIZUtire no vende marketing. VIZUtire controla riesgos reales en minería.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="como" class="border-b border-lightGray">
+      <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
+        <div class="max-w-3xl">
+          <p class="text-xs uppercase tracking-widest text-techGray">Cómo funciona</p>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Flujo operativo claro, de faena a decisión.</h2>
+        </div>
+
+        <div class="mt-10 grid lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-xs uppercase tracking-widest text-techGray">Inputs</p>
+            <p class="mt-2 text-sm text-graphite/85">Datos operacionales + condición + contexto.</p>
+            <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
+              <img src="assets/captura-de-datos.png" alt="Captura de datos" class="w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-xs uppercase tracking-widest text-techGray">Análisis</p>
+            <p class="mt-2 text-sm text-graphite/85">Evaluación estructural + tensional + analítica.</p>
+            <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
+              <img src="assets/ia-vizucore.png" alt="IA VIZUcore" class="w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-xs uppercase tracking-widest text-techGray">Acción</p>
+            <p class="mt-2 text-sm text-graphite/85">Alertas y recomendaciones defendibles.</p>
+            <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
+              <img src="assets/acciones-recomendadas.png" alt="Acciones recomendadas" class="w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORIA -->
+    <section id="historia" class="border-b border-lightGray">
+      <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
+        <div class="max-w-3xl">
+          <p class="text-xs uppercase tracking-widest text-techGray">Historia</p>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Evolución con hitos verificables.</h2>
+          <p class="mt-4 text-graphite/85 leading-relaxed">
+            Sección lista para mantener una narrativa sobria: investigación, patentes, pilotos, validación y escalamiento.
+          </p>
+        </div>
+
+        <div class="mt-10 rounded-2xl border border-lightGray overflow-hidden bg-whiteTech">
+          <img src="assets/historia.jpg" alt="Historia e hitos VIZUtire" class="w-full h-auto" loading="lazy" />
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-sm font-semibold">Tecnología protegida</p>
+            <p class="mt-2 text-sm text-graphite/85">
+              Bloque listo para precisar jurisdicciones, estado de patentes y publicaciones permitidas.
+            </p>
+            <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
+              <img src="assets/tecnologia-protegida.png" alt="Tecnología protegida" class="w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-sm font-semibold">Equipo y operación</p>
+            <p class="mt-2 text-sm text-graphite/85">
+              Bloque para mostrar visitas, terreno y capacidades (sin “postureo”).
+            </p>
+            <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
+              <img src="assets/equipo-de-trabajo.png" alt="Equipo de trabajo en terreno" class="w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVIDENCIA -->
+    <section id="evidencia" class="border-b border-lightGray">
+      <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
+        <div class="max-w-3xl">
+          <p class="text-xs uppercase tracking-widest text-techGray">Resultados y evidencia</p>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Indicadores medibles, sin humo.</h2>
+          <p class="mt-4 text-graphite/85 leading-relaxed">
+            Aquí puedes ajustar cifras y casos con el nivel de detalle permitido por cliente (público / anónimo / confidencial).
+          </p>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-5">
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-xs uppercase tracking-widest text-techGray">Seguridad</p>
+            <p class="mt-2 text-2xl font-semibold">0</p>
+            <p class="mt-1 text-sm text-graphite/85">Reventones en posiciones delanteras reportados (histórico).</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-xs uppercase tracking-widest text-techGray">Rendimiento</p>
+            <p class="mt-2 text-2xl font-semibold">+500–700 h</p>
+            <p class="mt-1 text-sm text-graphite/85">Vida útil adicional promedio reportada (depende del sitio).</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-xs uppercase tracking-widest text-techGray">Disponibilidad</p>
+            <p class="mt-2 text-2xl font-semibold">+0,5%</p>
+            <p class="mt-1 text-sm text-graphite/85">Mejora referencial reportada (depende de contexto operativo).</p>
+          </div>
+        </div>
+
+        <!-- Clientes (sin RRSS; solo espacio para logos, editable después) -->
+        <div class="mt-10 p-6 rounded-2xl border border-lightGray">
+          <p class="text-sm font-semibold">Clientes / validaciones (bloque listo)</p>
+          <p class="mt-2 text-sm text-graphite/85">
+            Aquí se incorporan logos o nombres según permisos. Si hay NDA: “Cliente (confidencial)”.
+          </p>
+
+          <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="p-4 rounded-2xl border border-lightGray flex items-center justify-center">
+              <img class="max-h-10 w-auto opacity-90" src="assets/clients/cliente-1.png" alt="Cliente 1 (logo)" loading="lazy" />
+            </div>
+            <div class="p-4 rounded-2xl border border-lightGray flex items-center justify-center">
+              <img class="max-h-10 w-auto opacity-90" src="assets/clients/cliente-2.png" alt="Cliente 2 (logo)" loading="lazy" />
+            </div>
+            <div class="p-4 rounded-2xl border border-lightGray flex items-center justify-center">
+              <img class="max-h-10 w-auto opacity-90" src="assets/clients/cliente-3.png" alt="Cliente 3 (logo)" loading="lazy" />
+            </div>
+            <div class="p-4 rounded-2xl border border-lightGray flex items-center justify-center">
+              <div class="text-xs text-techGray text-center">
+                Cliente (confidencial)<br/>— sin marca —
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="border-b border-lightGray">
+      <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
+        <div class="max-w-3xl">
+          <p class="text-xs uppercase tracking-widest text-techGray">Galería</p>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Material técnico, terreno y explicativo (editable).</h2>
+          <p class="mt-4 text-graphite/85 leading-relaxed">
+            Esta galería queda “instalada” para que mañana solo reemplaces archivos en <span class="font-medium">/assets/gallery/</span>.
+          </p>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Usamos algunas de tus imágenes como “galería base” -->
+          <figure class="group rounded-2xl border border-lightGray overflow-hidden cursor-pointer"
+                  data-full="assets/historia.jpg" data-caption="Historia • Hitos y validaciones">
+            <img src="assets/historia.jpg" alt="Historia VIZUtire" class="w-full h-56 object-cover" loading="lazy">
+            <figcaption class="p-4">
+              <p class="text-xs uppercase tracking-widest text-techGray">Historia</p>
+              <p class="mt-1 text-sm font-medium">Hitos y evolución</p>
+            </figcaption>
+          </figure>
+
+          <figure class="group rounded-2xl border border-lightGray overflow-hidden cursor-pointer"
+                  data-full="assets/modelamiento-fisico-tensional.png" data-caption="Técnico • Modelamiento tensional">
+            <img src="assets/modelamiento-fisico-tensional.png" alt="Modelamiento tensional" class="w-full h-56 object-cover" loading="lazy">
+            <figcaption class="p-4">
+              <p class="text-xs uppercase tracking-widest text-techGray">Técnico</p>
+              <p class="mt-1 text-sm font-medium">Modelamiento tensional</p>
+            </figcaption>
+          </figure>
+
+          <figure class="group rounded-2xl border border-lightGray overflow-hidden cursor-pointer"
+                  data-full="assets/ultrasonido-inspeccion.png" data-caption="Técnico • Inspección por ultrasonido">
+            <img src="assets/ultrasonido-inspeccion.png" alt="Ultrasonido inspección" class="w-full h-56 object-cover" loading="lazy">
+            <figcaption class="p-4">
+              <p class="text-xs uppercase tracking-widest text-techGray">Técnico</p>
+              <p class="mt-1 text-sm font-medium">Ultrasonido</p>
+            </figcaption>
+          </figure>
+
+          <figure class="group rounded-2xl border border-lightGray overflow-hidden cursor-pointer"
+                  data-full="assets/ia-vizucore.png" data-caption="Analítica • VIZUcore (placeholder visual)">
+            <img src="assets/ia-vizucore.png" alt="IA VIZUcore" class="w-full h-56 object-cover" loading="lazy">
+            <figcaption class="p-4">
+              <p class="text-xs uppercase tracking-widest text-techGray">Analítica</p>
+              <p class="mt-1 text-sm font-medium">Modelo y reportabilidad</p>
+            </figcaption>
+          </figure>
+
+          <figure class="group rounded-2xl border border-lightGray overflow-hidden cursor-pointer"
+                  data-full="assets/equipo-de-trabajo.png" data-caption="Terreno • Equipo y visitas técnicas">
+            <img src="assets/equipo-de-trabajo.png" alt="Equipo de trabajo" class="w-full h-56 object-cover" loading="lazy">
+            <figcaption class="p-4">
+              <p class="text-xs uppercase tracking-widest text-techGray">Terreno</p>
+              <p class="mt-1 text-sm font-medium">Visitas y operación</p>
+            </figcaption>
+          </figure>
+
+          <figure class="group rounded-2xl border border-lightGray overflow-hidden cursor-pointer"
+                  data-full="assets/tecnologia-protegida.png" data-caption="Propiedad intelectual • Tecnología protegida">
+            <img src="assets/tecnologia-protegida.png" alt="Tecnología protegida" class="w-full h-56 object-cover" loading="lazy">
+            <figcaption class="p-4">
+              <p class="text-xs uppercase tracking-widest text-techGray">PI</p>
+              <p class="mt-1 text-sm font-medium">Protección tecnológica</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Lightbox (JS mínimo) -->
+        <div id="lightbox" class="fixed inset-0 hidden items-center justify-center bg-graphite/90 p-5">
+          <div class="max-w-5xl w-full">
+            <div class="flex items-center justify-between mb-3">
+              <p id="lightboxCaption" class="text-sm text-lightGray"></p>
+              <button id="lightboxClose"
+                class="px-4 py-2 rounded-xl border border-lightGray text-lightGray hover:text-whiteTech hover:border-whiteTech transition">
+                Cerrar
+              </button>
+            </div>
+            <div class="rounded-2xl overflow-hidden border border-lightGray/30 bg-graphite">
+              <img id="lightboxImg" src="" alt="Imagen ampliada" class="w-full h-auto">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONOCIMIENTO (queda listo; embeds reales después) -->
+    <section id="conocimiento" class="border-b border-lightGray">
+      <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
+        <div class="max-w-3xl">
+          <p class="text-xs uppercase tracking-widest text-techGray">Conocimiento</p>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Sección técnica para educación y transferencia.</h2>
+          <p class="mt-4 text-graphite/85 leading-relaxed">
+            Queda instalada para que mañana pegues URLs de videos y publicaciones (YouTube / LinkedIn) sin cambiar el diseño.
+          </p>
+        </div>
+
+        <div class="mt-10 grid lg:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-lightGray overflow-hidden">
+            <div class="px-6 py-4 border-b border-lightGray bg-whiteTech">
+              <p class="text-sm font-semibold">Video técnico #1 (pendiente)</p>
+              <p class="text-xs text-techGray mt-1">Placeholder (se activará cuando tengas URL embed)</p>
+            </div>
+            <div class="aspect-video bg-lightGray flex items-center justify-center text-xs text-techGray">
+              Video pendiente
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-lightGray overflow-hidden">
+            <div class="px-6 py-4 border-b border-lightGray bg-whiteTech">
+              <p class="text-sm font-semibold">Video técnico #2 (pendiente)</p>
+              <p class="text-xs text-techGray mt-1">Placeholder (se activará cuando tengas URL embed)</p>
+            </div>
+            <div class="aspect-video bg-lightGray flex items-center justify-center text-xs text-techGray">
+              Video pendiente
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
+        <div class="max-w-3xl">
+          <p class="text-xs uppercase tracking-widest text-techGray">Contacto</p>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Contacto profesional, sin fricción.</h2>
+          <p class="mt-4 text-graphite/85 leading-relaxed">
+            Completa el formulario y un responsable técnico responderá con un alcance inicial.
+          </p>
+        </div>
+
+        <div class="mt-10 grid lg:grid-cols-12 gap-6 items-start">
+          <div class="lg:col-span-7 rounded-2xl border border-lightGray overflow-hidden">
+            <!-- Google Forms embed (costo cero) -->
+            <iframe
+              title="Formulario de contacto VIZUtire"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdvUJqbbA9x8jO2KwMSeR9FtFXl4lgQL18oChHbgl07ClFtjA/viewform?embedded=true"
+              class="w-full"
+              style="height: 820px;"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0">Cargando…</iframe>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="p-6 rounded-2xl border border-lightGray">
+              <p class="text-sm font-semibold">Ubicación</p>
+              <p class="mt-2 text-sm text-graphite/85">Antofagasta – Chile</p>
+
+              <div class="mt-6 p-4 rounded-2xl bg-graphite text-whiteTech">
+                <p class="text-xs uppercase tracking-widest text-techGray">Para acelerar respuesta</p>
+                <ul class="mt-2 text-sm leading-relaxed space-y-1">
+                  <li>• Flota/equipo, medida y fabricante.</li>
+                  <li>• Dolor principal (seguridad/consumo/disp.).</li>
+                  <li>• Sitio y ventanas operacionales.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-6 p-6 rounded-2xl border border-lightGray">
+              <p class="text-sm font-semibold">Nota</p>
+              <p class="mt-2 text-sm text-graphite/85">
+                Por ahora no incluimos RRSS en código. Cuando decidan activarlas, las incorporamos con enlaces verificados y sin ruido.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-graphite text-lightGray">
+    <div class="max-w-6xl mx-auto px-5 py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <p class="font-semibold">
+            <span class="text-whiteTech">VIZU</span><span class="text-vizuRed">tire</span>
+          </p>
+          <p class="mt-2 text-sm text-lightGray/80">
+            Antofagasta – Chile · Servicios industriales para minería (OTR).
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 text-sm">
+          <a class="hover:text-whiteTech transition" href="#problema">Problema</a>
+          <a class="hover:text-whiteTech transition" href="#solucion">Solución</a>
+          <a class="hover:text-whiteTech transition" href="#historia">Historia</a>
+          <a class="hover:text-whiteTech transition" href="#galeria">Galería</a>
+          <a class="hover:text-whiteTech transition" href="#contacto">Contacto</a>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-lightGray/20 text-xs text-lightGray/70">
+        <p>© <span id="year"></span> VIZUtire. Sitio estático (HTML + Tailwind CDN).</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS mínimo: menú móvil + año + lightbox -->
+  <script>
+    // Menú móvil
+    const btn = document.getElementById("menuBtn");
+    const panel = document.getElementById("mobileNav");
+
+    btn?.addEventListener("click", () => {
+      const isHidden = panel.classList.contains("hidden");
+      panel.classList.toggle("hidden", !isHidden);
+      btn.setAttribute("aria-expanded", String(isHidden));
+    });
+
+    panel?.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        panel.classList.add("hidden");
+        btn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Año footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Lightbox (mínimo)
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    document.querySelectorAll("#galeria figure[data-full]").forEach(fig => {
+      fig.addEventListener("click", () => {
+        const full = fig.getAttribute("data-full");
+        const cap = fig.getAttribute("data-caption") || "";
+        if (!full) return;
+        lightboxImg.src = full;
+        lightboxCaption.textContent = cap;
+        lightbox.classList.remove("hidden");
+        lightbox.classList.add("flex");
+      });
+    });
+
+    const closeLb = () => {
+      lightbox.classList.add("hidden");
+      lightbox.classList.remove("flex");
+      lightboxImg.src = "";
+      lightboxCaption.textContent = "";
+    };
+
+    lightboxClose?.addEventListener("click", closeLb);
+    lightbox?.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLb();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLb();
+    });
+  </script>
+</body>
+</html>
