@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VIZUtire | Control de riesgo real en neumáticos OTR</title>
-  <meta name="description" content="VIZUtire entrega análisis estructural de neumáticos OTR mediante ultrasonidos, modelamiento tensional y analítica avanzada para reducir riesgo, consumo y detenciones no programadas." />
+  <title>VIZUtire | Nuevo estándar para control estructural de neumáticos OTR</title>
+  <meta name="description" content="VIZUtire: ultrasonido + análisis tensional + IA/analítica para control estructural de neumáticos OTR, decisiones por condición y reducción de riesgo operacional en minería." />
 
   <!-- Tailwind CSS via CDN (costo cero) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -33,11 +33,32 @@
 </head>
 
 <body class="bg-whiteTech text-graphite antialiased">
+
   <!-- Header / Nav -->
   <header class="sticky top-0 z-50 bg-whiteTech/95 backdrop-blur border-b border-lightGray">
     <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
-      <a href="#top" class="flex items-baseline gap-1 font-semibold tracking-tight">
-        <span class="text-graphite text-lg">VIZU</span><span class="text-vizuRed text-lg">tire</span>
+
+      <!-- Logo + Wordmark (subir tu logo real a assets/logo-vizutire.png) -->
+      <a href="#top" class="flex items-center gap-3">
+        <!-- LOGO: reemplaza el archivo por tu logo real -->
+        <div class="w-10 h-10 rounded-xl border border-lightGray bg-whiteTech flex items-center justify-center overflow-hidden">
+          <img
+            src="assets/logo-vizutire.png"
+            alt="Logo VIZUtire"
+            class="w-full h-full object-contain"
+            loading="eager"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=&quot;font-size:12px;color:#9E9E9E&quot;>LOGO</span>';"
+          />
+        </div>
+
+        <div class="leading-tight">
+          <div class="font-semibold tracking-tight text-lg">
+            <span class="text-graphite">VIZU</span><span class="text-vizuRed">tire</span>
+          </div>
+          <div class="text-xs text-techGray uppercase tracking-widest">
+            OTR Structural Intelligence
+          </div>
+        </div>
       </a>
 
       <!-- Desktop nav -->
@@ -87,75 +108,92 @@
     <!-- HERO -->
     <section class="border-b border-lightGray">
       <div class="max-w-6xl mx-auto px-5 py-14 md:py-20 grid md:grid-cols-12 gap-10 items-start">
-        <div class="md:col-span-7">
-          <p class="text-xs uppercase tracking-widest text-techGray">Análisis estructural de neumáticos OTR • Minería</p>
 
-          <h1 class="mt-4 text-3xl md:text-5xl font-semibold leading-tight tracking-tight">
-            Control de riesgo real en neumáticos OTR con
-            <span class="vizu-accent">VIZU</span><span class="text-graphite">tire</span>.
+        <div class="md:col-span-7">
+          <!-- Eyebrow (más visible) -->
+          <div class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-lightGray bg-whiteTech">
+            <span class="w-2 h-2 rounded-full bg-vizuRed"></span>
+            <p class="text-xs uppercase tracking-widest text-graphite">
+              Análisis estructural de neumáticos OTR para minería
+            </p>
+          </div>
+
+          <h1 class="mt-5 text-3xl md:text-5xl font-semibold leading-tight tracking-tight">
+            Decidir por condición con
+            <span class="vizu-accent">VIZU</span><span class="text-graphite">tire</span>:
+            ultrasonido, tensiones e <span class="vizu-accent">IA</span>.
           </h1>
 
           <p class="mt-5 text-base md:text-lg text-graphite/85 leading-relaxed">
-            Ultrasonidos + modelamiento tensional + analítica avanzada para detectar daños internos no visibles,
-            priorizar intervención y tomar decisiones por condición.
+            Identificamos daño interno no visible, lo interpretamos en su contexto operacional
+            y entregamos recomendaciones trazables para operar, reparar, rotar o retirar.
           </p>
 
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
             <a href="#contacto"
-               class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-graphite text-whiteTech hover:bg-vizuRed transition">
+              class="inline-flex items-center justify-center px-5 py-3 rounded-2xl bg-graphite text-whiteTech hover:bg-vizuRed transition">
               Solicitar contacto técnico
             </a>
             <a href="#evidencia"
-               class="inline-flex items-center justify-center px-5 py-3 rounded-2xl border border-graphite text-graphite hover:border-vizuRed hover:text-vizuRed transition">
+              class="inline-flex items-center justify-center px-5 py-3 rounded-2xl border border-graphite text-graphite hover:border-vizuRed hover:text-vizuRed transition">
               Ver evidencia y KPIs
             </a>
           </div>
 
           <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="p-4 rounded-2xl border border-lightGray">
-              <p class="text-xs text-techGray uppercase tracking-widest">Enfoque</p>
+              <p class="text-xs uppercase tracking-widest text-techGray">Enfoque</p>
               <p class="mt-1 text-sm font-medium">Predictivo por condición</p>
             </div>
             <div class="p-4 rounded-2xl border border-lightGray">
-              <p class="text-xs text-techGray uppercase tracking-widest">Compatibilidad</p>
-              <p class="mt-1 text-sm font-medium">Complemento a TPMS</p>
+              <p class="text-xs uppercase tracking-widest text-techGray">Tecnología</p>
+              <p class="mt-1 text-sm font-medium">Ultrasonido + tensiones + IA</p>
             </div>
             <div class="p-4 rounded-2xl border border-lightGray">
-              <p class="text-xs text-techGray uppercase tracking-widest">Madurez</p>
+              <p class="text-xs uppercase tracking-widest text-techGray">Madurez</p>
               <p class="mt-1 text-sm font-medium">TRL 9 en entorno real</p>
             </div>
           </div>
         </div>
 
         <div class="md:col-span-5">
+          <!-- Modelo de gestión integrado (CLAVE) -->
           <div class="rounded-2xl border border-lightGray overflow-hidden bg-whiteTech">
             <div class="px-6 py-4 border-b border-lightGray">
               <p class="text-sm font-semibold">Modelo de gestión integrado</p>
-              <p class="text-xs text-techGray mt-1">Energía + cargas dinámicas + estructura</p>
+              <p class="text-xs text-techGray mt-1">
+                Bloque clave. Reemplazable por una versión más potente sin cambiar diseño.
+              </p>
             </div>
+
+            <!-- IMPORTANTE: cuando me subas la nueva imagen, solo reemplaza el archivo en assets/ -->
             <img src="assets/modelo-gestion-integrado-vizutire.png"
                  alt="Modelo de gestión integrado VIZUtire"
-                 class="w-full h-auto" loading="lazy" />
+                 class="w-full h-auto"
+                 loading="lazy"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML+='<div style=&quot;padding:18px;color:#9E9E9E;font-size:13px;border-top:1px solid #E6E6E6&quot;>Imagen no encontrada. Verifique que exista <b>assets/modelo-gestion-integrado-vizutire.png</b> (mismo nombre).</div>';"
+            />
           </div>
 
           <div class="mt-6 p-6 rounded-2xl border border-lightGray bg-whiteTech">
-            <p class="text-sm font-semibold">Qué hacemos (sin promesas, con método)</p>
+            <p class="text-sm font-semibold">Qué entregamos</p>
             <ul class="mt-4 space-y-3 text-sm text-graphite/85">
               <li class="flex gap-3">
                 <span class="w-2 h-2 mt-2 rounded-full bg-vizuRed"></span>
-                Detectamos discontinuidades internas mediante ultrasonidos.
+                Detección de discontinuidades internas (ultrasonido NDT).
               </li>
               <li class="flex gap-3">
                 <span class="w-2 h-2 mt-2 rounded-full bg-vizuRed"></span>
-                Modelamos esfuerzos operacionales para priorizar riesgo y acción.
+                Interpretación tensional por condición y contexto operativo.
               </li>
               <li class="flex gap-3">
                 <span class="w-2 h-2 mt-2 rounded-full bg-vizuRed"></span>
-                Entregamos recomendaciones prácticas: operar, reparar, rotar o baja técnica.
+                Analítica / IA para priorizar riesgo, tendencia y acción recomendada.
               </li>
             </ul>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -164,7 +202,9 @@
       <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
         <div class="max-w-3xl">
           <p class="text-xs uppercase tracking-widest text-techGray">El problema</p>
-          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Daños no visibles y decisiones con incertidumbre.</h2>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">
+            Daños no visibles y decisiones con incertidumbre.
+          </h2>
           <p class="mt-4 text-graphite/85 leading-relaxed">
             La falla estructural interna puede incubarse sin evidencia externa clara. Si el control se limita a inspección visual
             o criterios rígidos, el riesgo es doble: operar con daño crítico o dar de baja prematuramente un activo recuperable.
@@ -173,12 +213,12 @@
 
         <div class="mt-10 grid md:grid-cols-3 gap-5">
           <div class="p-6 rounded-2xl border border-lightGray">
-            <p class="text-sm font-semibold">Riesgo operacional</p>
+            <p class="text-sm font-semibold">Seguridad operacional</p>
             <p class="mt-2 text-sm text-graphite/85">Eventos de alta energía y exposición de personas/equipos.</p>
           </div>
           <div class="p-6 rounded-2xl border border-lightGray">
             <p class="text-sm font-semibold">Costo y consumo</p>
-            <p class="mt-2 text-sm text-graphite/85">Baja anticipada y compras prematuras.</p>
+            <p class="mt-2 text-sm text-graphite/85">Bajas anticipadas y compras prematuras.</p>
           </div>
           <div class="p-6 rounded-2xl border border-lightGray">
             <p class="text-sm font-semibold">Productividad</p>
@@ -194,36 +234,46 @@
         <div class="max-w-3xl">
           <p class="text-xs uppercase tracking-widest text-techGray">La solución</p>
           <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">
-            Ultrasonidos + análisis tensional para decidir por condición.
+            Ultrasonido + análisis tensional + IA para decidir por condición.
           </h2>
           <p class="mt-4 text-graphite/85 leading-relaxed">
-            Combinamos inspección ultrasónica no destructiva con modelamiento de tensiones y analítica para entregar
-            criterios técnicos trazables sobre operación, reparación, rotación o baja técnica.
+            Integramos inspección ultrasónica no destructiva, modelamiento tensional y analítica/IA para entregar
+            criterios técnicos defendibles sobre operación, reparación, rotación o baja técnica.
           </p>
         </div>
 
-        <div class="mt-10 grid lg:grid-cols-2 gap-6 items-start">
+        <div class="mt-10 grid lg:grid-cols-3 gap-6 items-start">
           <div class="p-6 rounded-2xl border border-lightGray">
-            <p class="text-sm font-semibold">Inspección ultrasónica</p>
-            <p class="mt-2 text-sm text-graphite/85">Identificación y evaluación de discontinuidades internas.</p>
+            <p class="text-sm font-semibold">Ultrasonidos</p>
+            <p class="mt-2 text-sm text-graphite/85">Detección y evaluación de discontinuidades internas.</p>
             <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
               <img src="assets/ultrasonido-inspeccion.png" alt="Ultrasonido inspección" class="w-full h-auto" loading="lazy" />
             </div>
           </div>
 
           <div class="p-6 rounded-2xl border border-lightGray">
-            <p class="text-sm font-semibold">Modelamiento tensional</p>
+            <p class="text-sm font-semibold">Análisis tensional</p>
             <p class="mt-2 text-sm text-graphite/85">Relación entre operación y respuesta estructural del neumático.</p>
             <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
               <img src="assets/modelamiento-fisico-tensional.png" alt="Modelamiento físico tensional" class="w-full h-auto" loading="lazy" />
             </div>
           </div>
+
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-sm font-semibold">IA / Analítica</p>
+            <p class="mt-2 text-sm text-graphite/85">Priorización de riesgo, tendencia y recomendación operativa.</p>
+            <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
+              <img src="assets/ia-vizucore.png" alt="IA VIZUcore" class="w-full h-auto" loading="lazy" />
+            </div>
+          </div>
         </div>
 
+        <!-- Principio rector (reformulado) -->
         <div class="mt-10 p-6 rounded-2xl bg-graphite text-whiteTech">
           <p class="text-xs uppercase tracking-widest text-techGray">Principio rector</p>
           <p class="mt-2 text-base md:text-lg leading-relaxed">
-            VIZUtire no vende marketing. VIZUtire controla riesgos reales en minería.
+            VIZUtire impulsa un nuevo estándar para el control estructural de neumáticos OTR en minería:
+            decisiones por condición, trazables y orientadas a seguridad y desempeño.
           </p>
         </div>
       </div>
@@ -234,13 +284,15 @@
       <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
         <div class="max-w-3xl">
           <p class="text-xs uppercase tracking-widest text-techGray">Cómo funciona</p>
-          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Flujo operativo claro, de faena a decisión.</h2>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">
+            Flujo operativo claro: datos → análisis → acción.
+          </h2>
         </div>
 
         <div class="mt-10 grid lg:grid-cols-3 gap-6">
           <div class="p-6 rounded-2xl border border-lightGray">
             <p class="text-xs uppercase tracking-widest text-techGray">Inputs</p>
-            <p class="mt-2 text-sm text-graphite/85">Datos operacionales + condición + contexto.</p>
+            <p class="mt-2 text-sm text-graphite/85">Datos operacionales, condición y contexto.</p>
             <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
               <img src="assets/captura-de-datos.png" alt="Captura de datos" class="w-full h-auto" loading="lazy" />
             </div>
@@ -248,7 +300,7 @@
 
           <div class="p-6 rounded-2xl border border-lightGray">
             <p class="text-xs uppercase tracking-widest text-techGray">Análisis</p>
-            <p class="mt-2 text-sm text-graphite/85">Evaluación estructural + tensional + analítica.</p>
+            <p class="mt-2 text-sm text-graphite/85">Estructural, tensional y analítica (IA).</p>
             <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
               <img src="assets/ia-vizucore.png" alt="IA VIZUcore" class="w-full h-auto" loading="lazy" />
             </div>
@@ -270,21 +322,27 @@
       <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
         <div class="max-w-3xl">
           <p class="text-xs uppercase tracking-widest text-techGray">Historia</p>
-          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Evolución con hitos verificables.</h2>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">
+            Evolución con hitos verificables.
+          </h2>
           <p class="mt-4 text-graphite/85 leading-relaxed">
-            Sección lista para mantener una narrativa sobria: investigación, patentes, pilotos, validación y escalamiento.
+            Investigación, protección tecnológica, pilotos, validación y escalamiento.
           </p>
         </div>
 
         <div class="mt-10 rounded-2xl border border-lightGray overflow-hidden bg-whiteTech">
-          <img src="assets/historia.jpg" alt="Historia e hitos VIZUtire" class="w-full h-auto" loading="lazy" />
+          <!-- IMPORTANTE: asegurar que el archivo sea assets/historia.jpg (minúsculas) -->
+          <img src="assets/historia.jpg" alt="Historia e hitos VIZUtire"
+               class="w-full h-auto" loading="lazy"
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;padding:18px;color:#9E9E9E;font-size:13px&quot;>No se encontró <b>assets/historia.jpg</b>. Revise nombre exacto (minúsculas) y extensión.</div>';"
+          />
         </div>
 
         <div class="mt-8 grid md:grid-cols-2 gap-6">
           <div class="p-6 rounded-2xl border border-lightGray">
             <p class="text-sm font-semibold">Tecnología protegida</p>
             <p class="mt-2 text-sm text-graphite/85">
-              Bloque listo para precisar jurisdicciones, estado de patentes y publicaciones permitidas.
+              Patentes y protección tecnológica según permisos de publicación.
             </p>
             <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
               <img src="assets/tecnologia-protegida.png" alt="Tecnología protegida" class="w-full h-auto" loading="lazy" />
@@ -294,7 +352,7 @@
           <div class="p-6 rounded-2xl border border-lightGray">
             <p class="text-sm font-semibold">Equipo y operación</p>
             <p class="mt-2 text-sm text-graphite/85">
-              Bloque para mostrar visitas, terreno y capacidades (sin “postureo”).
+              Experiencia en terreno y despliegue operacional.
             </p>
             <div class="mt-4 rounded-2xl overflow-hidden border border-lightGray">
               <img src="assets/equipo-de-trabajo.png" alt="Equipo de trabajo en terreno" class="w-full h-auto" loading="lazy" />
@@ -309,13 +367,15 @@
       <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
         <div class="max-w-3xl">
           <p class="text-xs uppercase tracking-widest text-techGray">Resultados y evidencia</p>
-          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Indicadores medibles, sin humo.</h2>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">
+            Indicadores medibles, basados en experiencia operacional.
+          </h2>
           <p class="mt-4 text-graphite/85 leading-relaxed">
-            Aquí puedes ajustar cifras y casos con el nivel de detalle permitido por cliente (público / anónimo / confidencial).
+            Ajustaremos cifras y casos al nivel de detalle permitido por cliente. Bloque preparado para agregar más KPIs.
           </p>
         </div>
 
-        <div class="mt-10 grid md:grid-cols-3 gap-5">
+        <div class="mt-10 grid md:grid-cols-4 gap-5">
           <div class="p-6 rounded-2xl border border-lightGray">
             <p class="text-xs uppercase tracking-widest text-techGray">Seguridad</p>
             <p class="mt-2 text-2xl font-semibold">0</p>
@@ -331,29 +391,32 @@
             <p class="mt-2 text-2xl font-semibold">+0,5%</p>
             <p class="mt-1 text-sm text-graphite/85">Mejora referencial reportada (depende de contexto operativo).</p>
           </div>
+          <div class="p-6 rounded-2xl border border-lightGray">
+            <p class="text-xs uppercase tracking-widest text-techGray">Impacto económico</p>
+            <p class="mt-2 text-2xl font-semibold">MMUSD</p>
+            <p class="mt-1 text-sm text-graphite/85">Ahorros acumulados por cliente (placeholder; ajustar con dato oficial).</p>
+          </div>
         </div>
 
-        <!-- Clientes (sin RRSS; solo espacio para logos, editable después) -->
+        <!-- Clientes -->
         <div class="mt-10 p-6 rounded-2xl border border-lightGray">
-          <p class="text-sm font-semibold">Clientes / validaciones (bloque listo)</p>
+          <p class="text-sm font-semibold">Clientes / validaciones</p>
           <p class="mt-2 text-sm text-graphite/85">
-            Aquí se incorporan logos o nombres según permisos. Si hay NDA: “Cliente (confidencial)”.
+            Logos reales (sin NDA). Solo subir a <span class="font-medium">assets/clients/</span> y se visualizan.
           </p>
 
           <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="p-4 rounded-2xl border border-lightGray flex items-center justify-center">
-              <img class="max-h-10 w-auto opacity-90" src="assets/clients/cliente-1.png" alt="Cliente 1 (logo)" loading="lazy" />
+              <img class="max-h-10 w-auto opacity-95" src="assets/clients/cliente-1.png" alt="Cliente 1 (logo)" loading="lazy" />
             </div>
             <div class="p-4 rounded-2xl border border-lightGray flex items-center justify-center">
-              <img class="max-h-10 w-auto opacity-90" src="assets/clients/cliente-2.png" alt="Cliente 2 (logo)" loading="lazy" />
+              <img class="max-h-10 w-auto opacity-95" src="assets/clients/cliente-2.png" alt="Cliente 2 (logo)" loading="lazy" />
             </div>
             <div class="p-4 rounded-2xl border border-lightGray flex items-center justify-center">
-              <img class="max-h-10 w-auto opacity-90" src="assets/clients/cliente-3.png" alt="Cliente 3 (logo)" loading="lazy" />
+              <img class="max-h-10 w-auto opacity-95" src="assets/clients/cliente-3.png" alt="Cliente 3 (logo)" loading="lazy" />
             </div>
             <div class="p-4 rounded-2xl border border-lightGray flex items-center justify-center">
-              <div class="text-xs text-techGray text-center">
-                Cliente (confidencial)<br/>— sin marca —
-              </div>
+              <img class="max-h-10 w-auto opacity-95" src="assets/clients/cliente-4.png" alt="Cliente 4 (logo)" loading="lazy" />
             </div>
           </div>
         </div>
@@ -365,14 +428,15 @@
       <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
         <div class="max-w-3xl">
           <p class="text-xs uppercase tracking-widest text-techGray">Galería</p>
-          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Material técnico, terreno y explicativo (editable).</h2>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">
+            Material técnico, terreno y explicativo.
+          </h2>
           <p class="mt-4 text-graphite/85 leading-relaxed">
-            Esta galería queda “instalada” para que mañana solo reemplaces archivos en <span class="font-medium">/assets/gallery/</span>.
+            Galería lista para reemplazar imágenes sin modificar el diseño.
           </p>
         </div>
 
         <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <!-- Usamos algunas de tus imágenes como “galería base” -->
           <figure class="group rounded-2xl border border-lightGray overflow-hidden cursor-pointer"
                   data-full="assets/historia.jpg" data-caption="Historia • Hitos y validaciones">
             <img src="assets/historia.jpg" alt="Historia VIZUtire" class="w-full h-56 object-cover" loading="lazy">
@@ -401,11 +465,11 @@
           </figure>
 
           <figure class="group rounded-2xl border border-lightGray overflow-hidden cursor-pointer"
-                  data-full="assets/ia-vizucore.png" data-caption="Analítica • VIZUcore (placeholder visual)">
+                  data-full="assets/ia-vizucore.png" data-caption="Analítica • IA / VIZUcore (visual referencial)">
             <img src="assets/ia-vizucore.png" alt="IA VIZUcore" class="w-full h-56 object-cover" loading="lazy">
             <figcaption class="p-4">
               <p class="text-xs uppercase tracking-widest text-techGray">Analítica</p>
-              <p class="mt-1 text-sm font-medium">Modelo y reportabilidad</p>
+              <p class="mt-1 text-sm font-medium">Priorización y recomendación</p>
             </figcaption>
           </figure>
 
@@ -446,14 +510,16 @@
       </div>
     </section>
 
-    <!-- CONOCIMIENTO (queda listo; embeds reales después) -->
+    <!-- CONOCIMIENTO (más compacto) -->
     <section id="conocimiento" class="border-b border-lightGray">
       <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
         <div class="max-w-3xl">
           <p class="text-xs uppercase tracking-widest text-techGray">Conocimiento</p>
-          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Sección técnica para educación y transferencia.</h2>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">
+            Contenido técnico y educativo.
+          </h2>
           <p class="mt-4 text-graphite/85 leading-relaxed">
-            Queda instalada para que mañana pegues URLs de videos y publicaciones (YouTube / LinkedIn) sin cambiar el diseño.
+            Espacio preparado para embeber YouTube / LinkedIn sin alterar la estructura.
           </p>
         </div>
 
@@ -461,9 +527,9 @@
           <div class="rounded-2xl border border-lightGray overflow-hidden">
             <div class="px-6 py-4 border-b border-lightGray bg-whiteTech">
               <p class="text-sm font-semibold">Video técnico #1 (pendiente)</p>
-              <p class="text-xs text-techGray mt-1">Placeholder (se activará cuando tengas URL embed)</p>
+              <p class="text-xs text-techGray mt-1">Placeholder</p>
             </div>
-            <div class="aspect-video bg-lightGray flex items-center justify-center text-xs text-techGray">
+            <div class="aspect-[16/7] bg-lightGray flex items-center justify-center text-xs text-techGray">
               Video pendiente
             </div>
           </div>
@@ -471,9 +537,9 @@
           <div class="rounded-2xl border border-lightGray overflow-hidden">
             <div class="px-6 py-4 border-b border-lightGray bg-whiteTech">
               <p class="text-sm font-semibold">Video técnico #2 (pendiente)</p>
-              <p class="text-xs text-techGray mt-1">Placeholder (se activará cuando tengas URL embed)</p>
+              <p class="text-xs text-techGray mt-1">Placeholder</p>
             </div>
-            <div class="aspect-video bg-lightGray flex items-center justify-center text-xs text-techGray">
+            <div class="aspect-[16/7] bg-lightGray flex items-center justify-center text-xs text-techGray">
               Video pendiente
             </div>
           </div>
@@ -486,15 +552,17 @@
       <div class="max-w-6xl mx-auto px-5 py-14 md:py-18">
         <div class="max-w-3xl">
           <p class="text-xs uppercase tracking-widest text-techGray">Contacto</p>
-          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">Contacto profesional, sin fricción.</h2>
+          <h2 class="mt-3 text-2xl md:text-3xl font-semibold tracking-tight">
+            Contacto profesional.
+          </h2>
           <p class="mt-4 text-graphite/85 leading-relaxed">
-            Completa el formulario y un responsable técnico responderá con un alcance inicial.
+            Completa el formulario y responderemos a la brevedad.
           </p>
         </div>
 
         <div class="mt-10 grid lg:grid-cols-12 gap-6 items-start">
           <div class="lg:col-span-7 rounded-2xl border border-lightGray overflow-hidden">
-            <!-- Google Forms embed (costo cero) -->
+            <!-- Google Forms embed -->
             <iframe
               title="Formulario de contacto VIZUtire"
               src="https://docs.google.com/forms/d/e/1FAIpQLSdvUJqbbA9x8jO2KwMSeR9FtFXl4lgQL18oChHbgl07ClFtjA/viewform?embedded=true"
@@ -508,26 +576,16 @@
           <div class="lg:col-span-5">
             <div class="p-6 rounded-2xl border border-lightGray">
               <p class="text-sm font-semibold">Ubicación</p>
-              <p class="mt-2 text-sm text-graphite/85">Antofagasta – Chile</p>
-
-              <div class="mt-6 p-4 rounded-2xl bg-graphite text-whiteTech">
-                <p class="text-xs uppercase tracking-widest text-techGray">Para acelerar respuesta</p>
-                <ul class="mt-2 text-sm leading-relaxed space-y-1">
-                  <li>• Flota/equipo, medida y fabricante.</li>
-                  <li>• Dolor principal (seguridad/consumo/disp.).</li>
-                  <li>• Sitio y ventanas operacionales.</li>
-                </ul>
+              <p class="mt-2 text-sm text-graphite/85">Las Encinas 353, Antofagasta – Chile</p>
+              <div class="mt-6 pt-6 border-t border-lightGray">
+                <p class="text-sm font-semibold">Correo</p>
+                <!-- Ajusta cuando confirmes el correo final -->
+                <p class="mt-2 text-sm text-graphite/85">contacto@vizutire.com</p>
               </div>
-            </div>
-
-            <div class="mt-6 p-6 rounded-2xl border border-lightGray">
-              <p class="text-sm font-semibold">Nota</p>
-              <p class="mt-2 text-sm text-graphite/85">
-                Por ahora no incluimos RRSS en código. Cuando decidan activarlas, las incorporamos con enlaces verificados y sin ruido.
-              </p>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   </main>
@@ -541,7 +599,7 @@
             <span class="text-whiteTech">VIZU</span><span class="text-vizuRed">tire</span>
           </p>
           <p class="mt-2 text-sm text-lightGray/80">
-            Antofagasta – Chile · Servicios industriales para minería (OTR).
+            Las Encinas 353, Antofagasta – Chile · Servicios industriales para minería (OTR).
           </p>
         </div>
 
